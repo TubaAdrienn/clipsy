@@ -117,19 +117,4 @@
 	(printout t ?WIFE_ALADAR)
 )
 
-;Aladar blanka
-;Aladar Margit
-
-;Balint Amalia
-;Balint margit
-;Balint blanka
-;Balint Hedvig
-
-;Elemer Eszter
-
-;Henrik Margit
-;Henrik Amalia
-
-;Marton Hedvig
-;Marton Margit
-;Marton Blanka
+;TODO: Irasd ki xépen
