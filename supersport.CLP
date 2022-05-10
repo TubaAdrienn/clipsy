@@ -72,49 +72,37 @@
     (test (not (and (= ?FUTAS ?ESZTER) (= ?FUTAS ?ELEMER))))
     (test (not (and (= ?FUTAS ?HENRIK) (= ?FUTAS ?HENRIK))))
     (test (not (and (= ?FUTAS ?MARGIT) (= ?FUTAS ?MARTON))))
-    ;Fuck around and find out
-    (or
-		(wife-is ?WIFE_ALADAR&amalia ?ALADAR&?AMALIA)
-		(wife-is ?WIFE_ALADAR&blanka ?ALADAR&?BLANKA)
-		(wife-is ?WIFE_ALADAR&eszter ?ALADAR&?ESZTER)
-		(wife-is ?WIFE_ALADAR&hedvig ?ALADAR&?HEDVIG)
-		(wife-is ?WIFE_ALADAR&margit ?ALADAR&?MARGIT)
+	(husbands $? ?h $?)
+	(or
+		(wife-is ?WIFE&amalia ?AMALIA&?h)
+		(wife-is ?WIFE&blanka ?BLANKA&?h)
+		(wife-is ?WIFE&eszter ?ESZTER&?h)
+		(wife-is ?WIFE&hedvig ?HEDVIG&?h)
+		(wife-is ?WIFE&margit ?MARGIT&?h)
 	)
-    (or
-		(wife-is ?WIFE_BALINT&amalia ?BALINT&?AMALIA)
-		(wife-is ?WIFE_BALINT&blanka ?BALINT&?BLANKA)
-		(wife-is ?WIFE_BALINT&eszter ?BALINT&?ESZTER)
-		(wife-is ?WIFE_BALINT&hedvig ?BALINT&?HEDVIG)
-		(wife-is ?WIFE_BALINT&margit ?BALINT&?MARGIT)
+	(or
+		(man-is ?HUSBAND&aladar ?ALADAR&?h)
+		(man-is ?HUSBAND&balint ?BALINT&?h)
+		(man-is ?HUSBAND&elemer ?ELEMER&?h)
+		(man-is ?HUSBAND&marton ?MARTON&?h)
+		(man-is ?HUSBAND&henrik ?HENRIK&?h)
 	)
+	
     (or
-		(wife-is ?WIFE_ELEMER&amalia ?ELEMER&?AMALIA)
-		(wife-is ?WIFE_ELEMER&blanka ?ELEMER&?BLANKA)
-		(wife-is ?WIFE_ELEMER&eszter ?ELEMER&?ESZTER)
-		(wife-is ?WIFE_ELEMER&hedvig ?ELEMER&?HEDVIG)
-		(wife-is ?WIFE_ELEMER&margit ?ELEMER&?MARGIT)
+		(profession-is ?PROFESSION&tanar ?TANAR&?h)
+		(profession-is ?PROFESSION&festo ?FESTO&?h)
+		(profession-is ?PROFESSION&zenesz ?ZENESZ&?h)
+		(profession-is ?PROFESSION&kertesz ?KERTESZ&?h)
+		(profession-is ?PROFESSION&postas ?POSTAS&?h)
 	)
-    (or
-		(wife-is ?WIFE_MARTON&amalia ?MARTON&?AMALIA)
-		(wife-is ?WIFE_MARTON&blanka ?MARTON&?BLANKA)
-		(wife-is ?WIFE_MARTON&eszter ?MARTON&?ESZTER)
-		(wife-is ?WIFE_MARTON&hedvig ?MARTON&?HEDVIG)
-		(wife-is ?WIFE_MARTON&margit ?MARTON&?MARGIT)
+	(or
+		(sport-is ?SPORT&siugras ?SIUGRAS&?h)
+		(sport-is ?SPORT&evezes ?EVEZES&?h)
+		(sport-is ?SPORT&uszas ?USZAS&?h)
+		(sport-is ?SPORT&magasugras ?MAGASUGRAS&?h)
+		(sport-is ?SPORT&futas ?FUTAS&?h)
 	)
-    (or
-		(wife-is ?WIFE_HENRIK&amalia ?HENRIK&?AMALIA)
-		(wife-is ?WIFE_HENRIK&blanka ?HENRIK&?BLANKA)
-		(wife-is ?WIFE_HENRIK&eszter ?HENRIK&?ESZTER)
-		(wife-is ?WIFE_HENRIK&hedvig ?HENRIK&?HEDVIG)
-		(wife-is ?WIFE_HENRIK&margit ?HENRIK&?MARGIT)
-	)
-    =>
-    (assert (solution Aladar ?WIFE_ALADAR))
-    (assert (solution Balint ?WIFE_BALINT))
-    (assert (solution Elemer ?WIFE_ELEMER))
-    (assert (solution Henrik ?WIFE_HENRIK))
-    (assert (solution Marton ?WIFE_MARTON))
-	(printout t ?WIFE_ALADAR)
+	=>
+	(assert (solution ?HUSBAND ?WIFE ?PROFESSION ?SPORT))
 )
 
-;TODO: Irasd ki xépen
